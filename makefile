@@ -58,4 +58,6 @@ local-pre-zip-misc:
 	@echo goodbye! miui prebuilt binaries!
 	rm -rf $(ZIP_DIR)/system/bin/app_process32_vendor
 	cp -rf stockrom/system/bin/app_process32 $(ZIP_DIR)/system/bin/app_process32
+	rm -rf $(ZIP_DIR)/system/bin/app_process64_vendor
+	cp -rf stockrom/system/bin/app_process64 $(ZIP_DIR)/system/bin/app_process64
 
