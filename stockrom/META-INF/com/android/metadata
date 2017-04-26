@@ -1,0 +1,3 @@
+post-build=LeTV/cm_x500/x500:6.0.1/MOB31K/21dc56bf83:userdebug/test-keys
+post-timestamp=1493111330
+pre-device=x500
