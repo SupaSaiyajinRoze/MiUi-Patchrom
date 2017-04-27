@@ -118,7 +118,7 @@
 
 # virtual methods
 .method go()V
-    .locals 21
+    .locals 20
 
     .prologue
     .line 12005
@@ -200,69 +200,27 @@
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-<<<<<<< HEAD
     .line 12012
-=======
-    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
->>>>>>> 33078ab... remove cm custom boot dexopt UI
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v1}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    iget-object v3, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    move-result-object v20
-
-<<<<<<< HEAD
     .line 12011
     const/4 v2, 0x3
 
     .line 12012
-=======
-    .line 11991
-    .local v20, "label":Ljava/lang/CharSequence;
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->this$0:Lcom/android/server/am/ActivityManagerService;
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/server/am/ActivityManagerService$PreBootContinuation;->this$0:Lcom/android/server/am/ActivityManagerService;
-
-    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
->>>>>>> 33078ab... remove cm custom boot dexopt UI
     const/4 v4, 0x0
 
-    aput-object v20, v3, v4
+    const/4 v5, 0x0
 
-    const v4, 0x10403f6
+    const/4 v6, 0x0
 
-    invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-<<<<<<< HEAD
     .line 12011
     invoke-virtual/range {v1 .. v6}, Lcom/android/server/am/ActivityManagerService;->updateBootProgress(ILandroid/content/pm/ApplicationInfo;IIZ)V
-=======
-    .line 11991
-    invoke-virtual {v1, v2, v3}, Lcom/android/server/am/ActivityManagerService;->showBootMessage(Ljava/lang/CharSequence;Z)V
->>>>>>> 33078ab... remove cm custom boot dexopt UI
 
     .line 12014
     .end local v18    # "ai":Landroid/content/pm/ActivityInfo;
     .end local v19    # "comp":Landroid/content/ComponentName;
-    .end local v20    # "label":Ljava/lang/CharSequence;
     :cond_0
     const-string/jumbo v1, "ActivityManager"
 

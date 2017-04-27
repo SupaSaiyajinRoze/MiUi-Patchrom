@@ -307,7 +307,7 @@
 
 .field volatile mBeganFromNonInteractive:Z
 
-.field mBootMsgDialog:Landroid/app/ProgressDialog;
+.field mBootMsgDialog:Lorg/cyanogenmod/internal/BootDexoptDialog;
 
 .field mBroadcastWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -1633,13 +1633,8 @@
 
     iput-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mWifiDisplayReceiver:Landroid/content/BroadcastReceiver;
 
-<<<<<<< HEAD
     .line 7054
     iput-object v7, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Lorg/cyanogenmod/internal/BootDexoptDialog;
-=======
-    .line 7018
-    iput-object v7, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Landroid/app/ProgressDialog;
->>>>>>> 33078ab... remove cm custom boot dexopt UI
 
     .line 7119
     new-instance v0, Lcom/android/server/policy/PhoneWindowManager$ScreenLockTimeout;
@@ -3308,7 +3303,6 @@
     :cond_0
     monitor-exit v0
 
-<<<<<<< HEAD
     .line 6625
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Lorg/cyanogenmod/internal/BootDexoptDialog;
 
@@ -3316,25 +3310,11 @@
 
     .line 6627
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Lorg/cyanogenmod/internal/BootDexoptDialog;
-=======
-    .line 6589
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Landroid/app/ProgressDialog;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v0}, Lorg/cyanogenmod/internal/BootDexoptDialog;->dismiss()V
 
-    .line 6591
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Landroid/app/ProgressDialog;
->>>>>>> 33078ab... remove cm custom boot dexopt UI
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
-
-<<<<<<< HEAD
     .line 6628
     iput-object v2, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Lorg/cyanogenmod/internal/BootDexoptDialog;
-=======
-    .line 6592
-    iput-object v2, p0, Lcom/android/server/policy/PhoneWindowManager;->mBootMsgDialog:Landroid/app/ProgressDialog;
->>>>>>> 33078ab... remove cm custom boot dexopt UI
 
     .line 6618
     :cond_1
@@ -29720,25 +29700,6 @@
     goto :goto_0
 .end method
 
-.method public showBootMessage(Ljava/lang/CharSequence;Z)V
-    .locals 2
-    .param p1, "msg"    # Ljava/lang/CharSequence;
-    .param p2, "always"    # Z
-
-    .prologue
-    .line 7016
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/android/server/policy/PhoneWindowManager$26;
-
-    invoke-direct {v1, p0, p1}, Lcom/android/server/policy/PhoneWindowManager$26;-><init>(Lcom/android/server/policy/PhoneWindowManager;Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 7015
-    return-void
-.end method
-
 .method public showGlobalActions()V
     .locals 2
 
@@ -30311,7 +30272,6 @@
     throw v1
 .end method
 
-<<<<<<< HEAD
 .method public updateBootProgress(ILandroid/content/pm/ApplicationInfo;II)V
     .locals 7
     .param p1, "stage"    # I
@@ -30343,8 +30303,6 @@
     return-void
 .end method
 
-=======
->>>>>>> 33078ab... remove cm custom boot dexopt UI
 .method updateOrientationListenerLp()V
     .locals 2
 

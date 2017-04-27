@@ -1638,26 +1638,21 @@
     :try_start_e
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
-    move-result-object v3
+    move-result-object v2
 
-    .line 620
-    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .line 625
+    const/4 v3, 0x1
 
-    move-result-object v4
+    const/4 v4, 0x0
 
-    .line 621
-    const v7, 0x10403f7
+    const/4 v5, 0x0
 
-    .line 620
-    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    const/4 v6, 0x0
 
-    move-result-object v4
-
-    .line 622
     const/4 v7, 0x0
 
     .line 624
-    invoke-interface {v3, v4, v7}, Landroid/app/IActivityManager;->showBootMessage(Ljava/lang/CharSequence;Z)V
+    invoke-interface/range {v2 .. v7}, Landroid/app/IActivityManager;->updateBootProgress(ILandroid/content/pm/ApplicationInfo;IIZ)V
     :try_end_e
     .catch Landroid/os/RemoteException; {:try_start_e .. :try_end_e} :catch_40
 
